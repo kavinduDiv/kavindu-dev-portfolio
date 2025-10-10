@@ -28,15 +28,15 @@ const Projects = () => {
     {
       title: 'E-Commerce Platform',
       description: 'A full-stack e-commerce application with real-time inventory management, secure payment processing, and an intuitive admin dashboard.',
-      tech: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Tailwind'],
+      tech: ['Html', 'PHP', 'Sql', 'Bootstrap', 'Javascript'],
       gradient: 'from-blue-500 to-cyan-500',
       link: '#',
       github: 'https://github.com',
     },
     {
-      title: 'Task Management App',
+      title: 'Pizza Shop Web Site',
       description: 'Collaborative task manager with drag-and-drop functionality, real-time updates, and team collaboration features.',
-      tech: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL'],
+      tech: ['Html', 'TypeScript', 'Prisma', 'PostgreSQL'],
       gradient: 'from-purple-500 to-pink-500',
       link: '#',
       github: 'https://github.com',

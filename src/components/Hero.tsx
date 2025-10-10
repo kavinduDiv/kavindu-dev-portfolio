@@ -41,11 +41,11 @@ const Hero = () => {
         initial="hidden"
         animate="visible"
       >
-        <motion.div variants={itemVariants} className="mb-6">
+        {/* <motion.div variants={itemVariants} className="mb-6">
           <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
             Welcome to my portfolio
           </span>
-        </motion.div>
+        </motion.div> */}
 
         <motion.h1
           variants={itemVariants}
@@ -53,7 +53,7 @@ const Hero = () => {
         >
           Hi, I'm{' '}
           <span className="bg-gradient-to-r from-primary via-[hsl(var(--gradient-mid))] to-[hsl(var(--gradient-end))] bg-clip-text text-transparent animate-gradient">
-            Your Name
+            T.A Kavindu
           </span>
         </motion.h1>
 
@@ -91,7 +91,7 @@ const Hero = () => {
           className="flex justify-center gap-6"
         >
           <a
-            href="https://github.com"
+            href="https://github.com/kavinduDiv"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary transition-colors"
@@ -99,7 +99,7 @@ const Hero = () => {
             <Github className="h-6 w-6" />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/kavindu-sasanka-906313332/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary transition-colors"
@@ -107,7 +107,7 @@ const Hero = () => {
             <Linkedin className="h-6 w-6" />
           </a>
           <a
-            href="mailto:your.email@example.com"
+            href="mailto:kavindu.sasanka962@gmail.com"
             className="text-muted-foreground hover:text-primary transition-colors"
           >
             <Mail className="h-6 w-6" />

@@ -66,21 +66,21 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <motion.div variants={itemVariants} className="space-y-6">
             <p className="text-lg text-foreground/80 leading-relaxed">
-              I'm currently pursuing my Bachelor's in Computer Science, with a focus on full-stack development. 
+              I'm currently pursuing my Bachelor's in Software Engineer, with a focus on full-stack development. 
               My journey in tech started with curiosity and has evolved into a passion for creating 
               impactful digital experiences.
             </p>
             <p className="text-lg text-foreground/80 leading-relaxed">
-              I specialize in building modern web applications using React, TypeScript, and Node.js. 
+              I specialize in building modern web applications using React, TypeScript, and PHP. 
               When I'm not coding, you'll find me exploring new technologies, contributing to open-source 
               projects, or designing beautiful user interfaces.
             </p>
             <div className="flex flex-wrap gap-4">
               <div className="px-4 py-2 bg-primary/10 rounded-full">
-                <span className="text-primary font-semibold">3+ Years Experience</span>
+                <span className="text-primary font-semibold">2+ Years Experience</span>
               </div>
               <div className="px-4 py-2 bg-primary/10 rounded-full">
-                <span className="text-primary font-semibold">20+ Projects</span>
+                <span className="text-primary font-semibold">6+ Projects</span>
               </div>
             </div>
           </motion.div>
