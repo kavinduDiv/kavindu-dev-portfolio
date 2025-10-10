@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+/* Modern Portfolio Design System */
+
+:root {
+  /* Light Mode Colors */
+  --background: 240 20% 99%;
+  --foreground: 240 10% 10%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 10%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 10%;
+
+  --primary: 262 83% 58%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 220 14% 96%;
+  --secondary-foreground: 240 10% 10%;
+
+  --muted: 220 14% 96%;
+  --muted-foreground: 240 4% 46%;
+
+  --accent: 220 14% 96%;
+  --accent-foreground: 240 10% 10%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 220 13% 91%;
+  --input: 220 13% 91%;
+  --ring: 262 83% 58%;
+
+  --radius: 1rem;
+
+  /* Custom Portfolio Colors */
+  --gradient-start: 262 83% 58%;
+  --gradient-mid: 280 100% 70%;
+  --gradient-end: 340 82% 67%;
+  
+  --hero-gradient: linear-gradient(135deg, hsl(262 83% 58%), hsl(280 100% 70%), hsl(340 82% 67%));
+  --card-gradient: linear-gradient(135deg, hsl(262 83% 58% / 0.1), hsl(280 100% 70% / 0.1));
+  
+  --sidebar-background: 0 0% 98%;
+  --sidebar-foreground: 240 5.3% 26.1%;
+  --sidebar-primary: 240 5.9% 10%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 240 4.8% 95.9%;
+  --sidebar-accent-foreground: 240 5.9% 10%;
+  --sidebar-border: 220 13% 91%;
+  --sidebar-ring: 217.2 91.2% 59.8%;
+}
+
+.dark {
+  /* Dark Mode Colors */
+  --background: 240 10% 8%;
+  --foreground: 240 5% 96%;
+
+  --card: 240 10% 12%;
+  --card-foreground: 240 5% 96%;
+
+  --popover: 240 10% 12%;
+  --popover-foreground: 240 5% 96%;
+
+  --primary: 262 83% 58%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 240 4% 16%;
+  --secondary-foreground: 240 5% 96%;
+
+  --muted: 240 4% 16%;
+  --muted-foreground: 240 5% 64%;
+
+  --accent: 240 4% 16%;
+  --accent-foreground: 240 5% 96%;
+
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 240 4% 16%;
+  --input: 240 4% 16%;
+  --ring: 262 83% 58%;
+
+  /* Custom Dark Mode Portfolio Colors */
+  --gradient-start: 262 83% 58%;
+  --gradient-mid: 280 100% 70%;
+  --gradient-end: 340 82% 67%;
+  
+  --hero-gradient: linear-gradient(135deg, hsl(262 83% 58%), hsl(280 100% 70%), hsl(340 82% 67%));
+  --card-gradient: linear-gradient(135deg, hsl(262 83% 58% / 0.2), hsl(280 100% 70% / 0.2));
+
+  --sidebar-background: 240 5.9% 10%;
+  --sidebar-foreground: 240 4.8% 95.9%;
+  --sidebar-primary: 224.3 76.3% 48%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 240 3.7% 15.9%;
+  --sidebar-accent-foreground: 240 4.8% 95.9%;
+  --sidebar-border: 240 3.7% 15.9%;
+  --sidebar-ring: 217.2 91.2% 59.8%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Animations */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
