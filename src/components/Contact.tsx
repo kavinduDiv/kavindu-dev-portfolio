@@ -30,19 +30,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'your.email@example.com',
-      link: 'mailto:your.email@example.com',
+      value: 'kavindu.sasanka962@gmail.com',
+      link: 'mailto:kavindu.sasanka962@gmail.com',
     },
     {
       icon: Phone,
       title: 'Phone',
-      value: '+1 (123) 456-7890',
+      value: '+94 78 883 4962',
       link: 'tel:+11234567890',
     },
     {
       icon: MapPin,
       title: 'Location',
-      value: 'Your City, Country',
+      value: 'Nittambuwa,Sri Lanka',
       link: '#',
     },
   ];
@@ -158,19 +158,19 @@ const Contact = () => {
                   </p>
                   <div className="flex justify-center gap-4">
                     <div className="text-center">
-                      <div className="text-3xl font-bold">3+</div>
+                      <div className="text-3xl font-bold">2+</div>
                       <div className="text-sm opacity-90">Years Experience</div>
                     </div>
                     <div className="w-px bg-white/20" />
                     <div className="text-center">
-                      <div className="text-3xl font-bold">20+</div>
+                      <div className="text-3xl font-bold">9+</div>
                       <div className="text-sm opacity-90">Projects Done</div>
                     </div>
                     <div className="w-px bg-white/20" />
-                    <div className="text-center">
+                    {/* <div className="text-center">
                       <div className="text-3xl font-bold">15+</div>
                       <div className="text-sm opacity-90">Happy Clients</div>
-                    </div>
+                    </div> */}
                   </div>
                 </CardContent>
               </Card>

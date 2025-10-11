@@ -24,56 +24,90 @@ const Projects = () => {
     },
   };
 
-  const projects = [
-    {
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce application with real-time inventory management, secure payment processing, and an intuitive admin dashboard.',
-      tech: ['Html', 'PHP', 'Sql', 'Bootstrap', 'Javascript'],
-      gradient: 'from-blue-500 to-cyan-500',
-      link: '#',
-      github: 'https://github.com',
-    },
-    {
-      title: 'Pizza Shop Web Site',
-      description: 'Collaborative task manager with drag-and-drop functionality, real-time updates, and team collaboration features.',
-      tech: ['Html', 'TypeScript', 'Prisma', 'PostgreSQL'],
-      gradient: 'from-purple-500 to-pink-500',
-      link: '#',
-      github: 'https://github.com',
-    },
-    {
-      title: 'Weather Dashboard',
-      description: 'Interactive weather forecast application with beautiful data visualizations and location-based weather alerts.',
-      tech: ['React', 'Chart.js', 'OpenWeather API', 'Tailwind'],
-      gradient: 'from-green-500 to-emerald-500',
-      link: '#',
-      github: 'https://github.com',
-    },
-    {
-      title: 'Social Media Analytics',
-      description: 'Analytics dashboard for tracking social media performance across multiple platforms with detailed insights.',
-      tech: ['React', 'D3.js', 'Express', 'MongoDB'],
-      gradient: 'from-orange-500 to-red-500',
-      link: '#',
-      github: 'https://github.com',
-    },
-    {
-      title: 'AI Chat Application',
-      description: 'Real-time chat application powered by AI for smart replies and conversation summarization.',
-      tech: ['React', 'Socket.io', 'OpenAI', 'Node.js'],
-      gradient: 'from-indigo-500 to-purple-500',
-      link: '#',
-      github: 'https://github.com',
-    },
-    {
-      title: 'Portfolio Builder',
-      description: 'No-code portfolio builder with customizable templates and instant deployment capabilities.',
-      tech: ['Next.js', 'Tailwind', 'Vercel', 'CMS'],
-      gradient: 'from-pink-500 to-rose-500',
-      link: '#',
-      github: 'https://github.com',
-    },
-  ];
+const projects = [
+  {
+    title: 'E-Commerce Platform',
+    description:
+      'A dynamic full-stack e-commerce website that supports multiple product categories, user authentication, shopping cart, order tracking, and secure online payments with an admin dashboard for inventory and sales management.',
+    tech: ['HTML', 'PHP', 'SQL', 'Bootstrap', 'JavaScript'],
+    gradient: 'from-blue-500 to-cyan-500',
+    link: '#',
+    github: 'https://github.com',
+  },
+  {
+    title: 'Pizza Shop Web Site',
+    description:
+      'A responsive pizza ordering website allowing customers to browse menus, customize pizzas, and place online orders with integrated contact forms and promotional sections.',
+    tech: ['HTML', 'CSS', 'Bootstrap', 'JavaScript'],
+    gradient: 'from-purple-500 to-pink-500',
+    link: '#',
+    github: 'https://github.com',
+  },
+  {
+    title: 'Service Center Management',
+    description:
+      'A complete web-based system for managing customer vehicles, service types, GRNs, invoices, and stock, featuring admin dashboards, analytics, and role-based access.',
+    tech: ['React', 'Chart.js', 'Tailwind', 'PHP', 'SQL'],
+    gradient: 'from-green-500 to-emerald-500',
+    link: '#',
+    github: 'https://github.com',
+  },
+  {
+    title: 'Mobile App - Plant Shop',
+    description:
+      'An Android-based m-commerce app for buying and selling plants with features like Firebase authentication, product catalog, cart management, and order tracking.',
+    tech: ['Android', 'Firebase', 'Java'],
+    gradient: 'from-orange-500 to-red-500',
+    link: '#',
+    github: 'https://github.com',
+  },
+  {
+    title: 'Mini ERP System',
+    description:
+      'A lightweight ERP solution for managing sales, purchases, stock, and finance, built with a React frontend and PHP backend for small-scale businesses.',
+    tech: ['React', 'Tailwind', 'PHP', 'SQL'],
+    gradient: 'from-indigo-500 to-purple-500',
+    link: '#',
+    github: 'https://github.com',
+  },
+  {
+    title: 'Library System',
+    description:
+      'A Java-based library management system that handles book records, member registrations, borrowing and returning operations, and report generation.',
+    tech: ['Java', 'SQL'],
+    gradient: 'from-pink-500 to-rose-500',
+    link: '#',
+    github: 'https://github.com',
+  },
+  {
+    title: 'Stock Management System',
+    description:
+      'A desktop application for tracking inventory levels, purchases, and sales transactions with real-time updates and automatic report generation.',
+    tech: ['Java', 'SQL'],
+    gradient: 'from-blue-500 to-cyan-500',
+    link: '#',
+    github: 'https://github.com',
+  },
+  {
+    title: 'Banking System',
+    description:
+      'An enterprise-level Java EE application that manages customer accounts, transactions, and loans using Servlets and EJBs on GlassFish Server.',
+    tech: ['Java EE', 'Servlet', 'EJB', 'GlassFish Server'],
+    gradient: 'from-purple-500 to-pink-500',
+    link: '#',
+    github: 'https://github.com',
+  },
+  {
+    title: 'Hospital Management System',
+    description:
+      'A system for managing hospital operations including patient records, doctor appointments, billing, and staff management with secure database integration.',
+    tech: ['Java', 'SQL'],
+    gradient: 'from-green-500 to-emerald-500',
+    link: '#',
+    github: 'https://github.com',
+  },
+];
+
 
   return (
     <section id="projects" className="py-20 px-4 bg-secondary/30">
@@ -124,7 +158,7 @@ const Projects = () => {
                       </Badge>
                     ))}
                   </div>
-                  <div className="flex gap-3">
+                  {/* <div className="flex gap-3">
                     <Button
                       variant="outline"
                       size="sm"
@@ -147,7 +181,7 @@ const Projects = () => {
                         Code
                       </a>
                     </Button>
-                  </div>
+                  </div> */}
                 </CardContent>
               </Card>
             </motion.div>

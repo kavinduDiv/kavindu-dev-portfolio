@@ -5,10 +5,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: Mail, href: 'mailto:your.email@example.com', label: 'Email' },
+    { icon: Github, href: 'https://github.com/kavinduDiv', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/kavindu-sasanka-906313332/', label: 'LinkedIn' },
+    // { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
+    { icon: Mail, href: 'mailto:kavindu.sasanka962@gmail.com', label: 'Email' },
   ];
 
   return (
@@ -86,9 +86,9 @@ const Footer = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <p className="flex items-center justify-center gap-2">
-            © {currentYear} Portfolio. Built with
-            <Heart className="h-4 w-4 text-primary fill-primary" />
-            using React & Tailwind CSS
+            © {currentYear} Kavindu Portfolio. 
+    
+  
           </p>
         </motion.div>
       </div>

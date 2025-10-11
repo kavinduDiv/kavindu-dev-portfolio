@@ -80,7 +80,7 @@ const About = () => {
                 <span className="text-primary font-semibold">2+ Years Experience</span>
               </div>
               <div className="px-4 py-2 bg-primary/10 rounded-full">
-                <span className="text-primary font-semibold">6+ Projects</span>
+                <span className="text-primary font-semibold">9+ Projects</span>
               </div>
             </div>
           </motion.div>
