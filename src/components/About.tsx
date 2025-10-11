@@ -1,107 +1,113 @@
 import { motion } from 'framer-motion';
-import { Card, CardContent } from '@/components/ui/card';
-import { Code, Palette, Zap, Users } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Code2, Palette, Rocket, Users } from 'lucide-react';
 
 const About = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.5 },
-    },
-  };
-
-  const features = [
+  const skills = [
     {
-      icon: Code,
-      title: 'Clean Code',
-      description: 'Writing maintainable and scalable code',
+      icon: Code2,
+      title: 'Frontend',
+      items: ['React', 'TypeScript', 'Tailwind CSS', 'Next.js'],
+      gradient: 'from-purple-500 to-pink-500',
+    },
+    {
+      icon: Rocket,
+      title: 'Backend',
+      items: ['Node.js', 'Express', 'MongoDB', 'PostgreSQL'],
+      gradient: 'from-blue-500 to-indigo-500',
     },
     {
       icon: Palette,
-      title: 'Creative Design',
-      description: 'Crafting beautiful user interfaces',
-    },
-    {
-      icon: Zap,
-      title: 'Performance',
-      description: 'Optimizing for speed and efficiency',
+      title: 'Design',
+      items: ['Figma', 'UI/UX', 'Responsive', 'Animations'],
+      gradient: 'from-green-500 to-teal-500',
     },
     {
       icon: Users,
-      title: 'Collaboration',
-      description: 'Working well in team environments',
+      title: 'Tools',
+      items: ['Git', 'Docker', 'VS Code', 'Postman'],
+      gradient: 'from-orange-500 to-red-500',
     },
   ];
 
   return (
-    <section id="about" className="py-20 px-4 bg-secondary/30">
+    <section id="about" className="py-20 px-4 bg-secondary/20">
       <motion.div
         className="max-w-7xl mx-auto"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
       >
-        <motion.div variants={itemVariants} className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            About <span className="bg-gradient-to-r from-primary to-[hsl(var(--gradient-end))] bg-clip-text text-transparent">Me</span>
+        <motion.div
+          className="text-center mb-16"
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
+            About Me
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Passionate software engineer with a love for creating elegant solutions to complex problems
+            Passionate developer with a love for creating beautiful, functional web applications
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          <motion.div variants={itemVariants} className="space-y-6">
-            <p className="text-lg text-foreground/80 leading-relaxed">
-              I'm currently pursuing my Bachelor's in Software Engineer, with a focus on full-stack development. 
-              My journey in tech started with curiosity and has evolved into a passion for creating 
-              impactful digital experiences.
+          <motion.div
+            className="space-y-6"
+            initial={{ x: -50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              I'm a full-stack software engineer with 3+ years of experience building scalable web applications. 
+              My journey started with a curiosity about how websites work, which evolved into a passion for crafting 
+              elegant solutions to complex problems.
             </p>
-            <p className="text-lg text-foreground/80 leading-relaxed">
-              I specialize in building modern web applications using React, TypeScript, and PHP. 
-              When I'm not coding, you'll find me exploring new technologies, contributing to open-source 
-              projects, or designing beautiful user interfaces.
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              I specialize in React and modern JavaScript frameworks, but I'm always eager to learn new technologies 
+              and best practices. When I'm not coding, you'll find me contributing to open-source projects, writing 
+              technical blog posts, or exploring the latest web development trends.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <div className="px-4 py-2 bg-primary/10 rounded-full">
-                <span className="text-primary font-semibold">2+ Years Experience</span>
-              </div>
-              <div className="px-4 py-2 bg-primary/10 rounded-full">
-                <span className="text-primary font-semibold">9+ Projects</span>
-              </div>
-            </div>
           </motion.div>
 
           <motion.div
-            variants={containerVariants}
             className="grid grid-cols-2 gap-4"
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
-            {features.map((feature, index) => (
-              <motion.div key={index} variants={itemVariants}>
-                <Card className="bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20">
-                  <CardContent className="p-6">
-                    <feature.icon className="h-8 w-8 text-primary mb-3" />
-                    <h3 className="font-semibold mb-2">{feature.title}</h3>
-                    <p className="text-sm text-muted-foreground">
-                      {feature.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+            {skills.map((skill, index) => {
+              const Icon = skill.icon;
+              return (
+                <motion.div
+                  key={skill.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  whileHover={{ y: -5 }}
+                >
+                  <Card className={`bg-gradient-to-br ${skill.gradient} text-white border-none shadow-lg hover:shadow-xl transition-all`}>
+                    <CardHeader>
+                      <Icon className="h-8 w-8 mb-2" />
+                      <CardTitle className="text-white">{skill.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <ul className="text-white/90 space-y-1 text-sm">
+                        {skill.items.map((item) => (
+                          <li key={item}>• {item}</li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </motion.div>

@@ -1,180 +1,134 @@
 import { motion } from 'framer-motion';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Mail, MapPin, Phone } from 'lucide-react';
 
 const Contact = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.5 },
-    },
-  };
-
   const contactInfo = [
     {
       icon: Mail,
       title: 'Email',
-      value: 'kavindu.sasanka962@gmail.com',
-      link: 'mailto:kavindu.sasanka962@gmail.com',
+      value: 'john.doe@example.com',
+      gradient: 'from-blue-500 to-indigo-500',
     },
     {
       icon: Phone,
       title: 'Phone',
-      value: '+94 78 883 4962',
-      link: 'tel:+11234567890',
+      value: '+1 (555) 123-4567',
+      gradient: 'from-purple-500 to-pink-500',
     },
     {
       icon: MapPin,
       title: 'Location',
-      value: 'Nittambuwa,Sri Lanka',
-      link: '#',
+      value: 'San Francisco, CA',
+      gradient: 'from-green-500 to-teal-500',
     },
   ];
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-  };
 
   return (
     <section id="contact" className="py-20 px-4">
       <motion.div
-        className="max-w-7xl mx-auto"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        className="max-w-6xl mx-auto"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
       >
-        <motion.div variants={itemVariants} className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Get In <span className="bg-gradient-to-r from-primary to-[hsl(var(--gradient-end))] bg-clip-text text-transparent">Touch</span>
+        <motion.div
+          className="text-center mb-16"
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
+            Get In Touch
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Have a project in mind? Let's work together to create something amazing
+            Have a project in mind? Let's work together to bring your ideas to life
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <motion.div variants={itemVariants}>
-            <Card className="bg-card/50 backdrop-blur-sm border-primary/20">
-              <CardContent className="p-6">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Name</Label>
-                    <Input
-                      id="name"
-                      placeholder="Your Name"
-                      className="border-primary/20 focus:border-primary"
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="your.email@example.com"
-                      className="border-primary/20 focus:border-primary"
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="subject">Subject</Label>
-                    <Input
-                      id="subject"
-                      placeholder="Project Discussion"
-                      className="border-primary/20 focus:border-primary"
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea
-                      id="message"
-                      placeholder="Tell me about your project..."
-                      className="border-primary/20 focus:border-primary min-h-[150px]"
-                      required
-                    />
-                  </div>
-                  <Button
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-primary to-[hsl(var(--gradient-mid))] hover:opacity-90"
-                    size="lg"
-                  >
-                    <Send className="h-4 w-4 mr-2" />
-                    Send Message
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+          <motion.div
+            className="space-y-6"
+            initial={{ x: -50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <form className="space-y-6">
+              <div className="space-y-2">
+                <Label htmlFor="name">Name</Label>
+                <Input
+                  type="text"
+                  id="name"
+                  placeholder="Your Name"
+                  className="transition-all duration-200"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="email">Email</Label>
+                <Input
+                  type="email"
+                  id="email"
+                  placeholder="your.email@example.com"
+                  className="transition-all duration-200"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="message">Message</Label>
+                <Textarea
+                  id="message"
+                  placeholder="Tell me about your project..."
+                  className="min-h-[150px] transition-all duration-200"
+                />
+              </div>
+              <Button
+                type="submit"
+                size="lg"
+                className="w-full gradient-bg text-white hover:opacity-90"
+              >
+                Send Message
+              </Button>
+            </form>
           </motion.div>
 
-          {/* Contact Information */}
-          <motion.div variants={containerVariants} className="space-y-6">
-            {contactInfo.map((info, index) => (
-              <motion.div key={index} variants={itemVariants}>
-                <Card className="bg-gradient-to-br from-primary/10 to-[hsl(var(--gradient-end))]/10 border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
-                  <CardContent className="p-6 flex items-start gap-4">
-                    <div className="p-3 bg-primary/20 rounded-lg">
-                      <info.icon className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-1">{info.title}</h3>
-                      <a
-                        href={info.link}
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        {info.value}
-                      </a>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-
-            <motion.div variants={itemVariants} className="pt-8">
-              <Card className="bg-gradient-to-br from-primary via-[hsl(var(--gradient-mid))] to-[hsl(var(--gradient-end))] text-white border-none">
-                <CardContent className="p-8 text-center">
-                  <h3 className="text-2xl font-bold mb-4">Let's Create Together</h3>
-                  <p className="mb-6 opacity-90">
-                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-                  </p>
-                  <div className="flex justify-center gap-4">
-                    <div className="text-center">
-                      <div className="text-3xl font-bold">2+</div>
-                      <div className="text-sm opacity-90">Years Experience</div>
-                    </div>
-                    <div className="w-px bg-white/20" />
-                    <div className="text-center">
-                      <div className="text-3xl font-bold">9+</div>
-                      <div className="text-sm opacity-90">Projects Done</div>
-                    </div>
-                    <div className="w-px bg-white/20" />
-                    {/* <div className="text-center">
-                      <div className="text-3xl font-bold">15+</div>
-                      <div className="text-sm opacity-90">Happy Clients</div>
-                    </div> */}
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
+          <motion.div
+            className="space-y-6"
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            {contactInfo.map((info, index) => {
+              const Icon = info.icon;
+              return (
+                <motion.div
+                  key={info.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  whileHover={{ x: 5 }}
+                >
+                  <Card className={`bg-gradient-to-br ${info.gradient} text-white border-none hover:shadow-xl transition-all`}>
+                    <CardHeader>
+                      <div className="flex items-center gap-3">
+                        <Icon className="h-6 w-6" />
+                        <CardTitle className="text-white">{info.title}</CardTitle>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <p className="text-white/90 text-lg">{info.value}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </motion.div>

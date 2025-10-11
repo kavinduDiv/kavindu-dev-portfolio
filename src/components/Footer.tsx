@@ -1,98 +1,57 @@
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Twitter, Mail, Heart } from 'lucide-react';
+import { Github, Linkedin, Twitter, Heart } from 'lucide-react';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/kavinduDiv', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://www.linkedin.com/in/kavindu-sasanka-906313332/', label: 'LinkedIn' },
-    // { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: Mail, href: 'mailto:kavindu.sasanka962@gmail.com', label: 'Email' },
+    { icon: Github, href: '#', label: 'GitHub' },
+    { icon: Linkedin, href: '#', label: 'LinkedIn' },
+    { icon: Twitter, href: '#', label: 'Twitter' },
   ];
 
   return (
-    <footer className="bg-secondary/50 backdrop-blur-sm border-t border-border">
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
-          {/* Brand */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-primary to-[hsl(var(--gradient-end))] bg-clip-text text-transparent mb-4">
-              Portfolio
-            </h3>
-            <p className="text-muted-foreground">
-              Full-Stack Software Engineer passionate about building innovative solutions
-            </p>
-          </motion.div>
-
-          {/* Quick Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            <h4 className="font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
-                <li key={item}>
-                  <a
-                    href={`#${item.toLowerCase()}`}
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Social Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <h4 className="font-semibold mb-4">Connect With Me</h4>
-            <div className="flex gap-4">
-              {socialLinks.map((social) => (
-                <a
+    <motion.footer
+      className="gradient-bg text-white py-12"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+    >
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex flex-col items-center space-y-6">
+          <div className="flex gap-6">
+            {socialLinks.map((social, index) => {
+              const Icon = social.icon;
+              return (
+                <motion.a
                   key={social.label}
                   href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 bg-primary/10 rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                  className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
                   aria-label={social.label}
                 >
-                  <social.icon className="h-5 w-5" />
-                </a>
-              ))}
-            </div>
-          </motion.div>
-        </div>
+                  <Icon className="h-5 w-5" />
+                </motion.a>
+              );
+            })}
+          </div>
 
-        {/* Bottom Bar */}
-        <motion.div
-          className="pt-8 border-t border-border text-center text-muted-foreground"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          <p className="flex items-center justify-center gap-2">
-            © {currentYear} Kavindu Portfolio. 
-    
-  
-          </p>
-        </motion.div>
+          <div className="flex items-center gap-2 text-sm">
+            <span>Made with</span>
+            <Heart className="h-4 w-4 fill-current" />
+            <span>using React & Tailwind CSS</span>
+          </div>
+
+          <div className="text-center text-sm text-white/80">
+            <p>&copy; {new Date().getFullYear()} John Doe. All rights reserved.</p>
+          </div>
+        </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 
